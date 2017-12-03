@@ -1,9 +1,4 @@
-#define NUM_X (6)
-#define NUM_Y (6)
-#define COLUMN_OFF (0x00)
-#define COLUMN_ON (0x3F)
-#define STD_DELAY (30)
-#define NUM_LED (6 * 6 * 6)
+#include "snowcube.h"
 
 // x/y axis pins:
 // 2, 4, 7, 8, 12, 13
@@ -17,13 +12,6 @@ uint8_t xy2[3];
 // cube buffer
 #define CB_SIZE (6 * 8 * 8)
 uint8_t cb[CB_SIZE];
-
-void LEDDiagnosticLoop();
-void LEDDiagnosticSetup();
-void displayFrameBuffer();
-void setPins();
-void writeColumn(int);
-void writeControl(int, int, uint8_t);
 
 void setup() {
 
