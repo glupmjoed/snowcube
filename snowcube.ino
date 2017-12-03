@@ -13,22 +13,67 @@ uint8_t xy2[3];
 #define CB_SIZE (6 * 6 * 8)
 uint8_t cb[CB_SIZE];
 
+// discrete snow buffer
+vertpt_t sbd[SBD_GENS];
+
 void setup() {
 
   setPins();
 
   zeroCubeBuffer();
 
+  snowDiscSetup();
+
 }
 
 void loop() {
-  
+
   snowDisc();
 
 }
 
+// snowDisc simulates snowfall by moving snowflakes discretely down through the
+// cube (i.e. one LED per snowflake).
 void snowDisc() {
-  displayCubeBuffer();
+
+  int i = 0;
+  while (i < SBD_GENS - SBD_MIN - 1) {
+
+	int j = i;
+	// turn off old snowflakes
+	for (int z = 0; z < 6; z++) {
+	  writeLED(sbd[j].x, sbd[j].y, z, 0);
+	  j++;
+	}
+	// move snow buffer window forward
+	i++;
+	j = i;
+	// turn on new snowflakes
+	for (int z = 0; z < 6; z++) {
+	  writeLED(sbd[j].x, sbd[j].y, z, 1);
+	  j++;
+	}
+
+	// display cube buffer for approximately SBD_DELAY * STD_DELAY microseconds
+	for (int k = 0; k < SBD_DELAY; k++) {
+	  displayCubeBuffer();
+	}
+
+  }
+  zeroCubeBuffer();
+
+}
+
+// snowDiscSetup randomly places SBD_GENS layers of snowflakes in the discrete
+// snow buffer array (sbd).
+void snowDiscSetup() {
+
+  uint8_t rand;
+  for (int i = 0; i < SBD_GENS; i++) {
+	rand = random(36);
+	sbd[i] = {rand%(NUM_X*NUM_Y), rand/(NUM_X*NUM_Y)};
+  }
+
 }
 
 void displayCubeBuffer() {
