@@ -10,7 +10,7 @@ uint8_t xy1[3];
 uint8_t xy2[3];
 
 // cube buffer
-#define CB_SIZE (6 * 8 * 8)
+#define CB_SIZE (6 * 6 * 8)
 uint8_t cb[CB_SIZE];
 
 void setup() {
@@ -62,13 +62,13 @@ void displayCubeBuffer() {
 
 void writeLED(uint8_t x, uint8_t y, uint8_t z, uint8_t val) {
 
-  cb[(y << 6) + (x << 3) + z] = val;
+  cb[(y * 8 * 6) + (x * 8) + z] = val;
 
 }
 
 uint8_t readLED(uint8_t x, uint8_t y, uint8_t z) {
 
-  return cb[(y << 6) + (x << 3) + z];
+  return cb[(y * 8 * 6) + (x * 8) + z];
 
 }
 
