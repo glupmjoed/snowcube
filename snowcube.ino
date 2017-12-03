@@ -17,14 +17,18 @@ void setup() {
 
   setPins();
 
-  LEDDiagnosticSetup();
+  zeroCubeBuffer();
 
 }
 
 void loop() {
   
-  LEDDiagnosticLoop();
+  snowDisc();
 
+}
+
+void snowDisc() {
+  displayCubeBuffer();
 }
 
 void displayCubeBuffer() {
@@ -172,4 +176,10 @@ void LEDDiagnosticLoop() {
 
   LEDDiagnosticSetup();
 
+}
+
+void zeroCubeBuffer() {
+  for (int i = 0; i < CB_SIZE; i++) {
+    cb[i] = 0;
+  }
 }
