@@ -9,10 +9,18 @@ void LEDDiagnosticLoop();
 
 void LEDDiagnosticSetup();
 
-void displayFrameBuffer();
+void displayCubeBuffer();
+
+uint8_t readLED(uint8_t, uint8_t, uint8_t);
 
 void setPins();
+
+void snowDisc();
 
 void writeColumn(int);
 
 void writeControl(int, int, uint8_t);
+
+void writeLED(uint8_t, uint8_t, uint8_t, uint8_t);
+
+void zeroCubeBuffer();
