@@ -27,7 +27,7 @@ void loop() {
 
 }
 
-void displayFrameBuffer() {
+void displayCubeBuffer() {
 
   int i = 0;
   uint8_t upper;
@@ -166,7 +166,7 @@ void LEDDiagnosticSetup() {
 void LEDDiagnosticLoop() {
 
   for (int i = 0; i < CB_SIZE; i++) {
-    displayFrameBuffer();
+    displayCubeBuffer();
     cb[i] = 0;
   }
 
