@@ -11,21 +11,21 @@ Install the core Arduino SDK and CLI.
 
 On Debian or Ubuntu Linux:
 
-[source]
-sudo apt-get install arduino-core arduino-mk
+[source,shell]
+$ sudo apt-get install arduino-core arduino-mk
 
 Usage
 -----
 
 To build the project:
 
-[source]
-make
+[source,shell]
+$ make
 
 To build and upload the project:
 
-[source]
-make upload
+[source,shell]
+$ make upload
 
 License
 -------
