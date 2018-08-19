@@ -84,7 +84,7 @@ void displayCubeBuffer() {
 
   while (i < 256) {
     upper = i >> (3 + 3);
-    lower = (i >> 3) & 7;
+    lower = (i >> 3) & 0x7;
     writeControl(upper, lower, HIGH);
     writeColumn(i);
     writeControl(upper, lower, LOW);
