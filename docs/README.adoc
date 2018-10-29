@@ -6,6 +6,8 @@ a custom-built 6x6x6 LED cube. I suspect I'm the only person in possession of
 this particular piece of hardware, so the documentation is aimed primarily
 towards myself.
 
+image::cube_handheld.gif[]
+
 Setup
 -----
 
