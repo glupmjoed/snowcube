@@ -1,7 +1,10 @@
 Cool 6^3^ LED cube 
 ==================
 
-This project is an attempt at simulating snowfall with an Arduino Uno board and a custom-built 6x6x6 LED cube. I suspect I'm the only person in possession of this particular piece of hardware, so the documentation is aimed primarily towards myself.
+This project is an attempt at simulating snowfall with an Arduino Uno board and
+a custom-built 6x6x6 LED cube. I suspect I'm the only person in possession of
+this particular piece of hardware, so the documentation is aimed primarily
+towards myself.
 
 Setup
 -----
